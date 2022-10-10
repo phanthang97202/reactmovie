@@ -1,0 +1,96 @@
+@use "../../scss" as *;
+
+.favourite__container{
+    width: 100%;   
+}
+.favourite{
+    text-align: center;
+    font-size: 32px;
+}
+.favourite__box{
+    width: 100%;
+    .deleteCartAll{
+        outline: none;
+        background-color: red;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        float: right;
+        margin-right: 30px;
+        border: none;
+        margin-bottom: 10px;
+    }
+    &__item{
+        @include flex(_, flex-start);
+        margin-bottom: 10px;
+        padding: 0 6%;
+        align-content: stretch;
+        // flex: 1;
+        // height: 240px;
+        width: 100%;
+        box-sizing: border-box;
+        @include mobile{
+            flex-direction: column;
+        }
+
+        &__img{
+            height: 240px;
+            width: 16%;
+
+            @include tablet{
+                width: 26%;
+            }
+            @include mobile{
+                width: 100%;
+            }
+            
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__desc{
+            margin-left: 14px ; 
+            // align-self: flex-end;
+            flex: 1;
+            @include mobile{
+                margin-top: 6px;
+                margin-left: 0;
+            }
+            p{
+                height: 20%;
+                overflow: hidden;
+                // text-overflow: ellipsis; 
+            }
+            button{
+                margin-top: 10px;
+                padding: 6px;
+                border-radius: 5px;
+                background-color: red;
+                color: #fff;
+                outline: none;
+            }
+        }
+        &__author{
+            opacity: 0.7;
+            i{
+                span{
+                    font-family: $font-family;
+                    padding-left: 4px;
+                }
+                font-size: 14px;
+            }
+        }
+        &__date{
+            opacity: 0.7;
+            i{
+                span{
+                    font-family: $font-family;
+                    padding-left: 4px;
+                }
+                font-size: 14px;
+            }
+        }
+    }
+}
