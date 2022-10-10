@@ -79,7 +79,7 @@ const Favourite = () => {
                     <button>Continue Watch</button>
                   </Link>
                   <button
-                    // onClick={dataCartContext.handlerDeleteItem}
+                    onClick={dataCartContext.handlerDeleteItem}
                     style={{ backgroundColor: "#2e2828" }}
                   >
                     &#8212;
