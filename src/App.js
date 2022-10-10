@@ -29,20 +29,25 @@ function App() {
     localStorage.removeItem('favourite');
   };
 
-  // const handlerDeleteItem = () => {
-  //   stateFavourite.splice(0, 1);
-  //   console.log(stateFavourite)
-  //   let testtt = localStorage.setItem('favourite', JSON.stringify(stateFavourite));
-  //   setStateFavourite(testtt);
-  //   return testtt;
-  // };
+  const handlerDeleteItem = () => {
+    let newCartCopyDelete = [...stateFavourite] // stateFavourite là mảng dữ liệu giỏ hàng mà tôi lưu vào localStorage
+    console.log("newCartCopyDelete", newCartCopyDelete);
+    newCartCopyDelete.splice(0, 1); // phần này đang xóa để test chứ chưa lấy ra index vội
+    console.log(newCartCopyDelete);
+    // let deleteCartItem = localStorage.setItem("favourite", JSON.stringify(stateFavourite));
+    localStorage.setItem("favourite", JSON.stringify(newCartCopyDelete));
+    setStateFavourite(newCartCopyDelete);
+    // return deleteItemCart;
+    return newCartCopyDelete;
+  };
+  
   return (
     <CartContext.Provider
       value={{
         stateFavourite,
         setStateFavourite,
         handlerDeleteAllCart,
-        // handlerDeleteItem,
+        handlerDeleteItem,
       }}
     >
       <BrowserRouter>
