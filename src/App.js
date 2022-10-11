@@ -29,10 +29,10 @@ function App() {
     localStorage.removeItem('favourite');
   };
 
-  const handlerDeleteItem = () => {
-    let newCartCopyDelete = [...stateFavourite] // stateFavourite là mảng dữ liệu giỏ hàng mà tôi lưu vào localStorage
+  const handlerDeleteItem = (index) => {
+    let newCartCopyDelete = [...stateFavourite] 
     console.log("newCartCopyDelete", newCartCopyDelete);
-    newCartCopyDelete.splice(0, 1); // phần này đang xóa để test chứ chưa lấy ra index vội
+    newCartCopyDelete.splice(index, 1); 
     console.log(newCartCopyDelete);
     // let deleteCartItem = localStorage.setItem("favourite", JSON.stringify(stateFavourite));
     localStorage.setItem("favourite", JSON.stringify(newCartCopyDelete));
