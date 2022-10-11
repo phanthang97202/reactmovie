@@ -34,7 +34,7 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Top rated movies</h2>
+            <h2>Top Rated Movies</h2>
             <Link to="/category/movie">
               <OutlineButton className="small">View Mores</OutlineButton>
             </Link>
