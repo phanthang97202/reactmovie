@@ -9,6 +9,7 @@ import CastList from './CastList'
 import VideoList from './VideoList'
 
 import Button, { OutlineButton } from '../../components/button/Button'
+import Reviews from './Reviews'
 
 // phần context cart 
 // import {createContext} from "react"
@@ -157,6 +158,9 @@ const Detail = () => {
             <div className="section mb-3">
               <VideoList id={item.id} />
             </div>
+          </div>
+          <div>
+            <Reviews id={item.id} />
           </div>
         </>
       )}
