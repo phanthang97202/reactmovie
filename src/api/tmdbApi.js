@@ -33,6 +33,11 @@ const tmdbApi = {
     const url = category[cate] + "/" + id + "/videos";
     return axiosClient.get(url, { params: {} });
   },
+  reviewUsers: (cate, id) => {
+    // https://api.themoviedb.org/3/movie/297762/videos?api_key=e9e9d8da18ae29fc430845952232787c
+    const url = category[cate] + "/" + id + "/reviews";
+    return axiosClient.get(url, { params: {} });
+  },
   search: (cate, params) => {
     // https://api.themoviedb.org/3/search/keyword?api_key=1cc28d7cb8202fa7566afa90c4a8b9f4&page=1&query=naruto
     const url = "search/" + category[cate];
