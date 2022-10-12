@@ -15,11 +15,17 @@
             margin-bottom: 3rem;
         }
         &__menus{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
+//             display: grid;
+//             grid-template-columns: repeat(3, 1fr);
+            
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content: center;
+            
             @include mobile{
-                grid-template-columns: repeat(2, 1fr);
+//                 grid-template-columns: repeat(2, 1fr);
             }
         }
         &__menu{
