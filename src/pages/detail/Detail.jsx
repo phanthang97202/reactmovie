@@ -40,6 +40,19 @@ const Detail = () => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });
       console.log("response", response);
+      
+      const checkCart = getDataFavourite.stateFavourite.some( (value) => value.id === response.id)
+      // console.log("checkCart", checkCart);
+      !checkCart ? 
+        getDataFavourite.setStateFavourite((prev) => {
+          const storageFavourite = [...prev, { ...response, category }];
+          const jsonFavourite = JSON.stringify(storageFavourite);
+          localStorage.setItem("favourite", jsonFavourite);
+          console.log("storageFavourite", storageFavourite);
+
+          return storageFavourite;
+        }) 
+      : console.log('trùng');
 
       // console.log(getDataFavourite.stateFavourite);
       // // getDataFavourite.stateFavourite && getDataFavourite.stateFavourite.forEach(
@@ -67,13 +80,13 @@ const Detail = () => {
       //   }
       // )
 
-      getDataFavourite.setStateFavourite((prev) => {
-        const storageFavourite = [...prev, { ...response, category }];
-        const jsonFavourite = JSON.stringify(storageFavourite);
-        localStorage.setItem("favourite", jsonFavourite);
-        console.log("storageFavourite", storageFavourite);
-        return storageFavourite;
-      });
+//       getDataFavourite.setStateFavourite((prev) => {
+//         const storageFavourite = [...prev, { ...response, category }];
+//         const jsonFavourite = JSON.stringify(storageFavourite);
+//         localStorage.setItem("favourite", jsonFavourite);
+//         console.log("storageFavourite", storageFavourite);
+//         return storageFavourite;
+//       });
     };
 
     // storageFavourite.include(response.id) ? getDetail() : console.log('trùng')  
