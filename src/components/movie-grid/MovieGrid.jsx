@@ -55,12 +55,12 @@ const MovieGrid = (props) => {
         };
         switch (props.category) {
           case category.movie:
-            response = await tmdbApi.getMoviesList(movieType.upcoming, {
+            response = await tmdbApi.getMoviesList(movieType.upcoming, 
               params,
-            });
+            );
             break;
           default:
-            response = await tmdbApi.getTvList(tvType.popular, { params });
+            response = await tmdbApi.getTvList(tvType.popular,  params );
         }
       } else {
         const params = {
